@@ -1,74 +1,80 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-import { siteContent } from "@/content/site-content";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 export function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    let frame: number;
-    const start = performance.now();
-    const duration = 1800;
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1800);
 
-    const animate = (now: number) => {
-      const elapsed = now - start;
-      const next = Math.min(100, (elapsed / duration) * 100);
-      setProgress(next);
-
-      if (next < 100) {
-        frame = requestAnimationFrame(animate);
-      } else {
-        window.setTimeout(() => setIsLoading(false), 400);
-      }
-    };
-
-    frame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frame);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <AnimatePresence mode="wait">
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#050505]"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+          exit={{
+            opacity: 0,
+            scale: 1.05,
+            filter: "blur(12px)",
+          }}
+          transition={{
+            duration: 0.8,
+            ease: [0.76, 0, 0.24, 1],
+          }}
         >
           <motion.div
-            className="flex flex-col items-center gap-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex flex-col items-center"
+            initial={{
+              opacity: 0,
+              scale: 0.8,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
           >
-            <span className="font-display text-sm uppercase tracking-[0.35em] text-muted-foreground">
-              Loading
-            </span>
-            <h1 className="font-display text-3xl font-medium tracking-tight text-foreground md:text-4xl">
-              {siteContent.nav.logo}
-            </h1>
-          </motion.div>
+            <motion.div
+              animate={{
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src="/images/logo.png"
+                alt="Ayush Suman"
+                width={90}
+                height={90}
+                priority
+              />
+            </motion.div>
 
-          <div className="absolute inset-x-0 bottom-0 px-8 pb-10 md:px-16">
-            <div className="mx-auto max-w-md">
-              <div className="mb-3 flex items-center justify-between text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                <span>Portfolio</span>
-                <span>{Math.round(progress)}%</span>
-              </div>
-              <div className="h-px w-full overflow-hidden bg-white/10">
-                <motion.div
-                  className="h-full bg-foreground"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${progress}%` }}
-                  transition={{ ease: "linear", duration: 0.1 }}
-                />
-              </div>
-            </div>
-          </div>
+            <h1 className="mt-8 font-display text-4xl font-semibold tracking-[0.35em] text-white">
+              AYUSH SUMAN
+            </h1>
+
+            <p className="mt-3 text-xs uppercase tracking-[0.45em] text-white/60">
+              Brand Identity Designer
+            </p>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
