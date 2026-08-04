@@ -79,7 +79,7 @@ hero: {
       src: "/images/brew-nest.jpg",
       alt: "Brew Nest",
     },
-    href: "#",
+    href: "https://www.behance.net/aayushsuman",
     tags: ["Branding", "Packaging", "Logo"],
   },
   {
@@ -93,7 +93,7 @@ hero: {
       src: "/images/misthi.jpg",
       alt: "Misthi",
     },
-    href: "#",
+    href: "https://www.behance.net/aayushsuman",
     tags: ["Identity", "Logo", "Print"],
   },
 {
@@ -107,7 +107,7 @@ hero: {
     src: "/images/lumera-skincare.jpg",
     alt: "Lumera Skincare",
   },
-  href: "#",
+  href: "https://www.behance.net/aayushsuman",
   tags: ["Branding", "Packaging", "Skincare"],
 },
  {
@@ -121,7 +121,7 @@ hero: {
     src: "/images/megha-cargo.jpg",
     alt: "MEGHA SUPER CARGO",
   },
-  href: "#",
+  href: "https://www.behance.net/aayushsuman",
   tags: ["Branding", "Logistics", "Identity"],
 },
 ] satisfies Project[],
