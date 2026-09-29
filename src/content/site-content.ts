@@ -40,12 +40,13 @@ export type Stat = {
 };
 
 export const siteContent = {
-  meta: {
-    title: "Ayush Suman — Graphic Designer",
-    description: "",
-    url: "",
-    ogImage: "",
-  },
+meta: {
+  title: "Ayush Suman — Graphic Designer at Fab Media Tech",
+  description:
+    "Ayush Suman is a Graphic Designer at Fab Media Tech specializing in brand identity, social media design, marketing creatives and digital campaigns.",
+  url: "https://ayush-portfolio-psi-lac.vercel.app",
+  ogImage: "",
+},
 
   nav: {
     logo: "Ayush Suman",
@@ -60,7 +61,7 @@ export const siteContent = {
 hero: {
   lines: ["Ayush Suman"],
   subtitle:
-    "Graphic Designer creating clean, impactful brand identities and premium visual experiences.",
+    "Graphic Designer at Fab Media Tech creating clean, engaging and purposeful visual experiences for brands, marketing campaigns and digital platforms.",
   cta: {
     label: "View My Work",
     href: "#work",
@@ -68,7 +69,21 @@ hero: {
 },
 
   projects: [
-  {
+ {
+  id: "fab-media-tech",
+  title: "Fab Media Tech",
+  category: "B2B Marketing & Digital Creatives",
+  description:
+    "Professional marketing creatives, social media campaigns and visual communication created for Fab Media Tech.",
+  year: "2026",
+  image: {
+    src: "/images/fab-media-tech.jpg",
+    alt: "Fab Media Tech",
+  },
+  href: "#contact",
+  tags: ["Marketing", "Social Media", "B2B"],
+},
+{
     id: "brew-nest",
     title: "Brew Nest",
     category: "Brand Identity",
@@ -128,16 +143,16 @@ hero: {
 
 about: {
   eyebrow: "About",
-  title: "Designing brands that people remember.",
+  title: "Designing visuals that communicate and connect.",
   paragraphs: [
-    "I'm Ayush Suman, a graphic designer passionate about creating clean, impactful and memorable visual identities.",
-    "I specialize in branding, logo design and marketing creatives that help businesses stand out.",
+    "I'm Ayush Suman, a Graphic Designer currently working at Fab Media Tech, where I create visual content for digital marketing, brand communication and B2B campaigns.",
+    "My work focuses on social media creatives, marketing campaigns, brand communication, promotional graphics and digital content. I combine strong design fundamentals with modern creative tools to create visuals that are clean, engaging and commercially relevant.",
   ],
-  stats: [
-    { value: "30+", label: "Projects" },
-    { value: "2+", label: "Years Learning" },
-    { value: "100%", label: "Creative" },
-  ],
+stats: [
+  { value: "30+", label: "Projects" },
+  { value: "1+", label: "Years Experience" },
+  { value: "100%", label: "Creative" },
+],
   image: {
     src: "/images/portrait.jpg",
     alt: "Ayush Suman",
@@ -148,46 +163,46 @@ services: [
   {
     id: "branding",
     title: "Brand Identity",
-    description: "Creating memorable and premium brand identities.",
+    description: "Creating consistent and memorable visual identities for businesses.",
     icon: "Palette",
-  },
-  {
-    id: "logo",
-    title: "Logo Design",
-    description: "Unique, modern and timeless logo design.",
-    icon: "PenTool",
   },
   {
     id: "social",
     title: "Social Media Design",
-    description: "Creative social media posts and campaign visuals.",
+    description: "Creating engaging social media creatives and campaign visuals.",
     icon: "LayoutGrid",
   },
   {
-    id: "packaging",
-    title: "Packaging Design",
-    description: "Luxury packaging that enhances product value.",
-    icon: "Package",
+    id: "marketing",
+    title: "Marketing Creatives",
+    description: "Designing promotional visuals focused on clear communication and audience engagement.",
+    icon: "Megaphone",
   },
   {
-  id: "ui-ux",
-  title: "UI/UX Design",
-  description: "Modern, responsive and user-friendly website and app interface design.",
-  icon: "Layers",
-},
-{
-  id: "motion",
-  title: "Motion Graphics",
-  description: "Eye-catching logo animations, reels and promotional motion graphics.",
-  icon: "Sparkles",
-},
+    id: "campaign",
+    title: "Campaign Design",
+    description: "Building cohesive visual campaigns across digital marketing platforms.",
+    icon: "Layers",
+  },
+  {
+    id: "print",
+    title: "Print Design",
+    description: "Designing professional banners, flyers, brochures and promotional materials.",
+    icon: "Printer",
+  },
+  {
+    id: "motion",
+    title: "Motion Graphics",
+    description: "Creating animated visuals, promotional videos and motion-based content.",
+    icon: "Sparkles",
+  },
 ] satisfies Service[],
 
 contact: {
   eyebrow: "Contact",
   title: "Let's Work Together",
   description:
-    "Have a branding project or need a designer? Feel free to reach out. I'd love to hear from you.",
+  "Have a project, campaign or creative requirement? Let's connect and create something clear, engaging and visually impactful.",
 
   email: "aayushsuman18@gmail.com",
 
@@ -215,7 +230,8 @@ contact: {
 },
 
   footer: {
-  tagline: "Graphic Designer crafting premium brand identities and visual experiences.",
+  tagline:
+  "Graphic Designer creating brand communication, marketing creatives and digital experiences.",
 
   copyright: `© ${new Date().getFullYear()} Ayush Suman. All Rights Reserved.`,
 
